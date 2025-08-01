@@ -199,6 +199,32 @@
             transform: translateY(-2px);
         }
 
+        /* Submit Button Specific Styling */
+        .btn-submit {
+            background: var(--gradient) !important;
+            color: white !important;
+            border: none !important;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.3);
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         /* Success Message Styling */
         .success-message {
             background: #d4edda;
@@ -782,7 +808,7 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" id="submit-btn">Send Message</button>
+                    <button type="submit" class="btn-submit" id="submit-btn">Send Message</button>
                 </form>
             </div>
             
@@ -927,13 +953,5 @@
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeIn 1s ease forwards';
-                }
-            });
-        }, observerOptions);
 
         
